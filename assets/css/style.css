@@ -465,9 +465,9 @@ main { flex-grow: 1;}
 }
 
 .card-link {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    display: --webkit-box;
+    --webkit-box-orient: vertical;
+    --webkit-line-clamp: 2;
     overflow-y: hidden;
     transition: var(--transition-short);
 }
