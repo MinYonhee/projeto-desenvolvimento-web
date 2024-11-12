@@ -123,18 +123,21 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                     </div>
                 `;
              // HTML do cartão de receita
-             card.innerHTML = `
+             $card.innerHTML = `
              <img src="${image}" alt="${title}" class="recipe-image">
              <h3>${title}</h3>
              <p>Tempo de preparo: ${cookingTime} minutos</p>
              <a href="${uri}" target="_blank" class="recipe-link">Ver receita</a>
          `;
 
-         $gridlist.appendChild(card);
+         $gridlist.appendChild($card);
      });
  }
 
  $currentTabPanel.appendChild($gridlist);
+
+ $currentTabBtn.innerHTML += `
+  <a href="./recipes.html" class="btn btn-secondary label-large has-state">Show more<a>`
 
 // Initialize content for the first tab
 addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
