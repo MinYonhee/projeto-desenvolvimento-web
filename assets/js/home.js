@@ -95,23 +95,46 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
         }
         $gridlist.innerHTML = ""; // Clear skeletons
         
-        // Populate with actual data
-        data.forEach(recipe => {
-            const card = document.createElement("div");
-            card.classList.add("recipe-card");
+        const $card = document.createElement("div");
+        $card.classList.add("card");
+        $card.style.animationDelay = `${100 * i}ms`;
 
-            // Customize this to include the data fields you need, e.g., title, image, etc.
-            card.innerHTML = `
-                <h3>${recipe.title}</h3>
-                <p>${recipe.instructions}</p>
-            `;
+        $card.innerHTML = `
+                <div class="card">
+                                <figure class="card-media img-holder">
+                                    <img src="${image}" width="195" height="195" loading="lazy" alt="${title}" class="img-cover">
+                                </figure>
 
-            $gridlist.appendChild(card);
-        });
+                                <div class="card-body">
+                                    <h3 class="title-small">
+                                        <a href="./detail.html" class="card-link">${title ?? "Untitled"}
+                                        </a>
+                                    </h3>
+                                    <div class="meta-wrapper">
+                                        <div class="meta-item">
+                                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                                            <span class="label-medium">${cookingTime || "<1"}minutes</span>
+                                        </div>
+                                        <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
+                                            <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                                            <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+                                        </button>
+                                    </div>
+                                </div>
+                `;
+             // HTML do cartão de receita
+             card.innerHTML = `
+             <img src="${image}" alt="${title}" class="recipe-image">
+             <h3>${title}</h3>
+             <p>Tempo de preparo: ${cookingTime} minutos</p>
+             <a href="${uri}" target="_blank" class="recipe-link">Ver receita</a>
+         `;
 
-        $currentTabPanel.appendChild($gridlist);
-    });
-};
+         $gridlist.appendChild(card);
+     });
+ }
+
+ $currentTabPanel.appendChild($gridlist);
 
 // Initialize content for the first tab
 addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
