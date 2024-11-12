@@ -11,7 +11,7 @@ const TYPE = "public";
  */
 
 export const fetchData = async function (queries, successCallback) {
-    const query = queries?.join("$")
+    const query = queries?.join("&")
     .replace(/,/g, "=")
     .replace(/ /g, "%20")
     .replace(/\+/g, "%2B");
