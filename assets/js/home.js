@@ -137,7 +137,8 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
  $currentTabPanel.appendChild($gridlist);
 
  $currentTabBtn.innerHTML += `
-  <a href="./recipes.html" class="btn btn-secondary label-large has-state">Show more<a>`
+  <a href="./recipes.html" class="btn btn-secondary label-large has-state">Show more<a>
+  `;
 
 // Initialize content for the first tab
 addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
