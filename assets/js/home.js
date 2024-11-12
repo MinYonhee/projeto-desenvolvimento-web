@@ -129,7 +129,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
         // Adicionar o botão "Show more" ao final
         $currentTabPanel.appendChild($gridlist);
         $currentTabPanel.innerHTML += `
-            <a href="./recipes.html" class="btn btn-secondary label-large has-state">Show more</a>
+            <a href="./recipes.html?mealType=${$currentTabBtn.textContent.trim().toLowerCase()}" class="btn btn-secondary label-large has-state">Show more</a>
         `;
     });
 };
