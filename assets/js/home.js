@@ -2,6 +2,7 @@
 
 import { fetchData } from "./api.js";
 import { $skeletonCard, cardQueries } from "./global.js";
+import { getTime } from "./module.js";
 
 /* Home page search */
 
@@ -113,7 +114,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                     <div class="meta-wrapper">
                         <div class="meta-item">
                             <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                            <span class="label-medium">${cookingTime || "<1"} minutes</span>
+                            <span class="label-medium">${getTime(cookingTime).time || "<1"} ${getTime(cookingTime).timeUnit}</span>
                         </div>
                         <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                             <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
