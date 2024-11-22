@@ -142,40 +142,35 @@ addTabContent($lastActiveTabBtn, $lastActiveTabPanel);
 
 /* Fetch data for slider card */
 
+// Fetch slider data for different cuisines
 let cuisineType = ["Asia", "French"];
+
+// Correct initialization of $sliderSection
 const $sliderSections = document.querySelectorAll("[data-slider-section]");
 
-$sliderSections.forEach(($sliderSection, index) => {
-    // Montar a estrutura inicial do slider
+cuisineType.forEach((cuisine, index) => {
+    const $sliderSection = $sliderSections[index];  // Access each section individually
     $sliderSection.innerHTML = `
-        <div class="container">
-            <h2 class="section-title headline-small" id="slider-label-1"> Latest ${cuisineType[index]} Recipes</h2>
+        <div class="container">          
+            <h2 class="section-title headline-small" id="slider-label-1"> Latest ${cuisine} Recipes</h2>
             <div class="slider">
                 <ul class="slider-wrapper" data-slider-wrapper>
-                    ${`<li class="slider-item">${$skeletonCard}</li>`.repeat(10)} <!-- Esqueleto de carregamento -->
+                    ${`<li class="slider-item">${$skeletonCard}</li>`.repeat(10)}  <!-- Loading skeletons -->
                 </ul>
             </div>
         </div>
     `;
 
-    // Corrigir o seletor para o slider-wrapper
     const $sliderWrapper = $sliderSection.querySelector("[data-slider-wrapper]");
 
-    // Fazer a requisição para a API
-    fetchData([...cardQueries, ["cuisineType", cuisineType[index]]], function(data) {
-        // Limpar esqueleto e adicionar os itens reais
+    // Fetch data for the current cuisine type
+    fetchData([...cardQueries, ["cuisineType", cuisine]], function(data) {
+        // Clear skeleton and add actual content
         $sliderWrapper.innerHTML = "";
 
-        data.hits.map(item => {
-            const {
-                recipe: {
-                    image,
-                    label: title,
-                    totalTime: cookingTime,
-                    uri
-                }
-            } = item;
-
+        // Loop through the fetched data and create cards
+        data.hits.forEach(item => {
+            const { recipe: { image, label: title, totalTime: cookingTime, uri } } = item;
             const recipeId = uri.slice(uri.lastIndexOf("_") + 1);
             const isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
 
@@ -207,10 +202,10 @@ $sliderSections.forEach(($sliderSection, index) => {
             $sliderWrapper.appendChild($sliderItem);
         });
 
-        // Adicionar o botão "Show more" ao final
+        // Add "Show more" button
         $sliderWrapper.innerHTML += `
             <li class="slider-item" data-slider-item>
-                <a href="./recipes.html?cuisineType=${cuisineType[index].toLowerCase()}" class="load-more-card has-state">
+                <a href="./recipes.html?cuisineType=${cuisine.toLowerCase()}" class="load-more-card has-state">
                     <span class="label-large">Show more</span>
                     <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
                 </a>
