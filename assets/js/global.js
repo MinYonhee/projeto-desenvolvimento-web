@@ -1,5 +1,7 @@
 "use strict";
 
+import { fetchData } from "./api";
+
 /**
  * Função para adicionar ouvintes de evento a múltiplos elementos.
  * 
@@ -31,4 +33,4 @@ export const $skeletonCard = `
                     
             <div class="skeleton card-text"></div>
         </div>
-    </div>`
+    </div>`;

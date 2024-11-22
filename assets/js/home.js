@@ -99,7 +99,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                 }
             } = item;
 
-            const  recipeId = uri.slice(uri.lastIndex("_") + 1);
+            
             
             
             const $card = document.createElement("div");
@@ -119,7 +119,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                             <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
                             <span class="label-medium">${getTime(cookingTime).time || "<1"} ${getTime(cookingTime).timeUnit}</span>
                         </div>
-                        <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
+                        <button class="icon-btn has-state ${isSaved ? "saved" : "removed"}" aria-label="Add to saved recipes" onclick="saveRecipe(this, '${recipeId}')">
                             <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
                             <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
                         </button>
