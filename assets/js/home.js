@@ -99,6 +99,9 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                 }
             } = item;
 
+            const  recipeId = uri.slice(uri.lastIndex("_") + 1);
+            
+            
             const $card = document.createElement("div");
             $card.classList.add("card");
             $card.style.animationDelay = `${100 * i}ms`; // Atraso de animação para cada cartão
