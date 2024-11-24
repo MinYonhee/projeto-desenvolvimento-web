@@ -48,3 +48,8 @@ button {
     width: 110px;
     display: block;
 }
+
+#error {
+    color: #fb5454;
+    opacity: 0;
+}
