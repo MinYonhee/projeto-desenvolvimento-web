@@ -95,7 +95,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
     `;
     
     // Make the API request
-    fetchDataByIgredient([ `q=${q}`, ['mealType', $currentTabBtn.textContent.trim().toLowerCase(),], ...cardQueries], function(data) {
+    fetchDataByIgredient(q, [['mealType', $currentTabBtn.textContent.trim().toLowerCase(),], ...cardQueries], function(data) {
         console.log("API Response for", $currentTabBtn.textContent.trim().toLowerCase(), data);
 
         // Check if data is valid before proceeding
