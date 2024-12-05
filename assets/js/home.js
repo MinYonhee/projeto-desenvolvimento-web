@@ -6,6 +6,11 @@ import { getTime } from "./module.js";
 
 /* Home page search */
 
+
+if (localStorage.getItem('token') === null) {
+    window.location.href = '/login.html'
+}
+
 const $searchField = document.querySelector("[data-search-field]");
 const $searchBtn = document.querySelector("[data-search-btn]");
 
