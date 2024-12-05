@@ -83,6 +83,18 @@
 
 }
 
+.logout {
+    background-color: hsl(11, 51%, 51%);
+    padding: 4px;
+    border-radius: 4px;
+    width: 90px;
+    font-weight: bold;
+}
+
+#userName {
+    align-self: center;
+  }
+
 @media(prefers-reduced-motion: no-preference) {
  :root   {
 

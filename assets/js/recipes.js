@@ -18,6 +18,22 @@ if (localStorage.getItem('token') === null) {
     window.location.href = '/login.html'
 }
 
+async function getUserData() {
+    const response = await fetch('https://parseapi.back4app.com/users/me', {
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Parse-Application-Id': 'ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj',
+            'X-Parse-REST-API-Key': '17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57',
+            'X-Parse-Session-Token': 'r:b07c7bae680c04ae1ee3f045cd69e7cf'                     
+        }
+    });
+
+    const responseJson = await response.json();
+    document.getElementById('userName').innerText = responseJson.username;
+}
+
+getUserData()
+
 const $searchField = document.querySelector("[data-search-field]");
 const $searchBtn = document.querySelector("[data-search-btn]");
 
