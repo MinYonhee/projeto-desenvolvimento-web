@@ -46,10 +46,9 @@ async function fetchSavedRecipes() {
         button.innerText = 'Remover';
         button.setAttribute('id', 'removeButton');
         button.onclick = () => deleteRecipe(recipe.objectId)
-
-
+        console.log(recipe)
         let span = document.createElement('span');
-        span.innerText = recipe.name;
+        span.innerHTML = `<a  target="_blank" href="recipes.html?q=${recipe.name}">${recipe.name}</a>`;
 
         div.appendChild(span);
         div.appendChild(button)
