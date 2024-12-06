@@ -5,6 +5,15 @@
     background-color: var(--dark-background);
 }
 
+ a {
+    display: inline;
+    color: hsl(11, 51%, 51%)
+}
+
+.redirectParagraph {
+    color: #fff;
+}
+
 img {
     margin: 0 auto;
 }
