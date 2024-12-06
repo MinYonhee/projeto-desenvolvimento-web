@@ -79,6 +79,8 @@ window.saveRecipe = async function(element, recipeId) {
                   url: data.recipe.uri
                 })
             };
+
+            console.log('params', params)
     
             const query = new URLSearchParams(params).toString();
     
@@ -94,7 +96,17 @@ window.saveRecipe = async function(element, recipeId) {
                 })
     
                 let recipeToDeleteJson = await recipeToDelete.json();
-                console.log('receita para deletar', recipeToDeleteJson)
+                let recipeIdTodelete = recipeToDeleteJson.results[0].objectId
+
+                await fetch(`https://parseapi.back4app.com/classes/receitas_salvas/${recipeIdTodelete}`, {
+                    method: 'DELETE',
+                    headers: {
+                        "X-Parse-Application-Id": "ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj",
+                        "X-Parse-REST-API-Key": "17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57",
+                        "X-Parse-Revocable-Session": "1",
+                        "X-Parse-Session-Token": localStorage.getItem('token')
+                    },
+                })
     
             } catch(error) {
                 console.log('Algo deu errado', error)
