@@ -71,6 +71,39 @@ window.saveRecipe = async function(element, recipeId) {
 
         ACCESS_POINT = ROOT;
     } else {
+        fetchData(cardQueries, async function(data) {
+            console.log('data', data)            
+            const params = {
+                where: JSON.stringify({
+                  name: data.recipe.label,
+                  url: data.recipe.uri
+                })
+            };
+    
+            const query = new URLSearchParams(params).toString();
+    
+            try {
+              
+                let recipeToDelete = await fetch(`https://parseapi.back4app.com/classes/receitas_salvas/?${query}`, {
+                    headers: {
+                        "X-Parse-Application-Id": "ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj",
+                        "X-Parse-REST-API-Key": "17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57",
+                        "X-Parse-Revocable-Session": "1",
+                        "X-Parse-Session-Token": localStorage.getItem('token')
+                    },
+                })
+    
+                let recipeToDeleteJson = await recipeToDelete.json();
+                console.log('receita para deletar', recipeToDeleteJson)
+    
+            } catch(error) {
+                console.log('Algo deu errado', error)
+            }
+        })
+
+
+      
+
         window.localStorage.removeItem(`cookio-recipe${recipeId}`);
         element.classList.toggle("saved");
         element.classList.toggle("removed");
