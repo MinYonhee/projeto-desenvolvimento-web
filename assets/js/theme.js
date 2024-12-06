@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggleBtn = document.querySelector("[data-theme-btn]");
     themeToggleBtn?.addEventListener("click", toggleTheme);
 });
+
