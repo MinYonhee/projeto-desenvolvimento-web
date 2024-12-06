@@ -154,10 +154,9 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
                 $gridlist.appendChild($card);
             });
 
-            // Add the "Show more" button
             $currentTabPanel.appendChild($gridlist);
             $currentTabPanel.innerHTML += `
-                <a href="./recipes.html?mealType=${$currentTabBtn.textContent.trim().toLowerCase()}" class="btn btn-secondary label-large has-state">Show more</a>
+                <a href="./recipes.html?mealType=${$currentTabBtn.textContent.trim().toLowerCase()}" class="btn btn-secondary label-large has-state">Mostrar mais</a>
             `;
         } else {
             console.error("Data is not in the expected format:", data);
@@ -232,11 +231,11 @@ cuisineType.forEach((cuisine, index) => {
                 $sliderWrapper.appendChild($sliderItem);
             });
 
-            // Add "Show more" button
+            // Add "" button
             $sliderWrapper.innerHTML += `
                 <li class="slider-item" data-slider-item>
                     <a href="./recipes.html?cuisineType=${cuisineType[index].toLowerCase()}" class="load-more-card has-state">
-                        <span class="label-large">Show more</span>
+                        <span class="label-large">Mostrar mais</span>
                         <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
                     </a>
                 </li>
