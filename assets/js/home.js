@@ -22,11 +22,12 @@ async function getUserData() {
             'Content-Type': 'application/json',
             'X-Parse-Application-Id': 'ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj',
             'X-Parse-REST-API-Key': '17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57',
-            'X-Parse-Session-Token': 'r:b07c7bae680c04ae1ee3f045cd69e7cf'                     
+            'X-Parse-Session-Token': localStorage.getItem('token')                     
         }
     });
 
     const responseJson = await response.json();
+    localStorage.setItem('userId', responseJson.objectId)
     document.getElementById('userName').innerText = responseJson.username;
 }
 

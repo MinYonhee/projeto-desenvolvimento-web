@@ -35,20 +35,75 @@ export const $skeletonCard = `
 
 const ROOT = "https://api.edamam.com/api/recipes/v2";
 
-window.saveRecipe = function(element, recipeId) {
+window.saveRecipe = async function(element, recipeId) {
     const isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
     ACCESS_POINT = `${ROOT}/${recipeId}`;
 
     if(!isSaved) {
-        fetchData(cardQueries, function(data) {
+        fetchData(cardQueries, async function(data) {
             window.localStorage.setItem(`cookio-recipe${recipeId}`, JSON.stringify(data));
             element.classList.toggle("saved");
             element.classList.toggle("removed");
             showNotification("Added to Recipe book");
+
+            let recipeData = {
+                name: data.recipe.label,
+                url: data.recipe.uri,
+                userId: localStorage.getItem('userId')
+            }
+
+            try {
+                await fetch('https://parseapi.back4app.com/classes/receitas_salvas', {
+                    method: 'POST',
+                    headers: {
+                        "X-Parse-Application-Id": "ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj",
+                        "X-Parse-REST-API-Key": "17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57",
+                        "X-Parse-Revocable-Session": "1",
+                        "X-Parse-Session-Token": localStorage.getItem('token')
+                    },
+                    body: JSON.stringify(recipeData)
+                })
+            } catch (error) {
+                console.log('Algo deu errado: ', error)
+            }
+
         });
 
         ACCESS_POINT = ROOT;
     } else {
+        fetchData(cardQueries, async function(data) {
+            console.log('data', data)            
+            const params = {
+                where: JSON.stringify({
+                  name: data.recipe.label,
+                  url: data.recipe.uri
+                })
+            };
+    
+            const query = new URLSearchParams(params).toString();
+    
+            try {
+              
+                let recipeToDelete = await fetch(`https://parseapi.back4app.com/classes/receitas_salvas/?${query}`, {
+                    headers: {
+                        "X-Parse-Application-Id": "ypYcXausTPunhXtj7Qz2KdO7JDp3wjLjtcXv5hTj",
+                        "X-Parse-REST-API-Key": "17jeZZW0H22bYIA3MZrii1q9Qd2Sz0BEjOcPiC57",
+                        "X-Parse-Revocable-Session": "1",
+                        "X-Parse-Session-Token": localStorage.getItem('token')
+                    },
+                })
+    
+                let recipeToDeleteJson = await recipeToDelete.json();
+                console.log('receita para deletar', recipeToDeleteJson)
+    
+            } catch(error) {
+                console.log('Algo deu errado', error)
+            }
+        })
+
+
+      
+
         window.localStorage.removeItem(`cookio-recipe${recipeId}`);
         element.classList.toggle("saved");
         element.classList.toggle("removed");
