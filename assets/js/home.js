@@ -254,26 +254,4 @@ cuisineType.forEach((cuisine, index) => {
     }).catch((error) => {
         console.error("Error fetching data:", error);
     });
-<<<<<<< HEAD
 });
-=======
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sliderWrapper = document.querySelector("[data-slider-wrapper]");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
-
-    const scrollStep = sliderWrapper.offsetWidth / 2; // Rolagem de 50% da largura visível
-
-    // Botão de voltar
-    prevBtn.addEventListener("click", () => {
-        sliderWrapper.scrollBy({ left: -scrollStep, behavior: "smooth" });
-    });
-
-    // Botão de avançar
-    nextBtn.addEventListener("click", () => {
-        sliderWrapper.scrollBy({ left: scrollStep, behavior: "smooth" });
-    });
-});
->>>>>>> 2e804c0 (carrossel)
