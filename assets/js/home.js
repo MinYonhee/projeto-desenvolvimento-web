@@ -254,9 +254,6 @@ cuisineType.forEach((cuisine, index) => {
     }).catch((error) => {
         console.error("Error fetching data:", error);
     });
-<<<<<<< HEAD
-});
-=======
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -276,4 +273,3 @@ document.addEventListener("DOMContentLoaded", () => {
         sliderWrapper.scrollBy({ left: scrollStep, behavior: "smooth" });
     });
 });
->>>>>>> 2e804c0 (carrossel)
