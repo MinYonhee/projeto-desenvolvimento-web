@@ -1,5 +1,7 @@
 document.getElementById('form').addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    console.log('asd')
     
     let user = document.getElementById('input-user').value;
     let email = document.getElementById('input-email').value;
@@ -24,6 +26,10 @@ document.getElementById('form').addEventListener('submit', async (e) => {
             headers: headers,
             body: JSON.stringify(body)
         });
+
+        if (login.status === 202) {
+            alert("Já existe usuário cadastrado com este e-mail.")
+        }
 
         if (login.ok) {
             const loginJson = await login.json();
