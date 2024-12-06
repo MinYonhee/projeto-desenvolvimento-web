@@ -16,7 +16,7 @@ export const fetchData = async function (queries, successCallback) {
     .replace(/ /g, "%20")
     .replace(/\+/g, "%2B");
 
-    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&type=${TYPE}${query ? `&${query}` : ""}`;
+    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&type=${TYPE}`;
 
 
     const response = await fetch(url);
@@ -32,8 +32,13 @@ export const fetchDataByIgredient = async function (param, queries, successCallb
     .replace(/,/g, "=")
     .replace(/ /g, "%20")
     .replace(/\+/g, "%2B");
+    console.log(param)
 
-    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&q=${param}&type=${TYPE}${query ? `&${query}` : ""}`;
+    let url = `${ACCESS_POINT}?app_id=${APP_ID}&q=${param}&app_key=${API_KEY}&type=public`;
+    console.log(url)
+    url = `${ACCESS_POINT}?app_id=${APP_ID}&q=laranja&app_key=${API_KEY}&type=public`;
+    console.log(url)
+    //https://api.edamam.com/api/recipes/v2?app_id=4fec3d5e&app_key=9d6daf8554fef2e9f5927871826b1c1a&type=public&q=orange
 
 
     const response = await fetch(url);
