@@ -183,7 +183,6 @@ cuisineType.forEach((cuisine, index) => {
     const $sliderSection = $sliderSections[index];  // Access each section individually
     $sliderSection.innerHTML = `
         <div class="container">          
-            <h2 class="section-title headline-small" id="slider-label-1"> Latest ${cuisine} Recipes</h2>
             <div class="slider">
                 <ul class="slider-wrapper" data-slider-wrapper>
                     ${`<li class="slider-item">${$skeletonCard}</li>`.repeat(10)}  <!-- Loading skeletons -->
