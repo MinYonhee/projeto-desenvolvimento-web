@@ -110,7 +110,7 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
     
     // Make the API request
     fetchData([['mealType', $currentTabBtn.getAttribute('search').trim().toLowerCase()], ...cardQueries], function(data) {
-        console.log("API Response for", $currentTabBtn.textContent.trim().toLowerCase(), data);
+        console.log("API Response for", $currentTabBtn.getAttribute('search').trim().toLowerCase(), data);
 
         // Check if data is valid before proceeding
         if (data && Array.isArray(data.hits)) {

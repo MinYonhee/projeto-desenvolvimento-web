@@ -16,7 +16,7 @@ export const fetchData = async function (queries, successCallback) {
     .replace(/ /g, "%20")
     .replace(/\+/g, "%2B");
 
-    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&type=${TYPE}`;
+    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&type=${TYPE}${query ? `&${query}` : ""}`;
 
 
     const response = await fetch(url);
