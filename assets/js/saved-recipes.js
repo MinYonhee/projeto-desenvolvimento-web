@@ -21,10 +21,16 @@ async function fetchSavedRecipes() {
         let div = document.createElement('div');
         div.setAttribute('id', 'savedRecipeCard');
 
+        let button = document.createElement('button');
+        button.innerText = 'Remover';
+        button.setAttribute('id', 'removeButton');
+
+
         let span = document.createElement('span');
         span.innerText = recipe.name;
 
         div.appendChild(span);
+        div.appendChild(button)
         document.getElementById('savedRecipes').appendChild(div);
 
     });
