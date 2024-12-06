@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--primary meta tags -->
+    <!--tags Primárias -->
 
-    <title>Cook.io - Easy peasy</title>
+    <title>Cook.io - Fácil de Usar</title>
     <meta name="title" content="Cook.io - Easy peasy">
     <meta name="description" content="This is a recipe aplication made by Rainbow Tech">
     
@@ -28,11 +28,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet">
    
-    <!--custom css --> 
+    <!--Conectando css --> 
    
     <link rel="stylesheet" href="./assets/css/style.css">
    
-    <!-- custom js-->
+    <!-- Conectando js-->
      
     <script src="./assets/js/global.js" type="module"></script>
     <script src="./assets/js/home.js" type="module"></script>
@@ -52,7 +52,7 @@
                 </li>
 
                 <li>
-                    <a href="./recipes.html" class="navbar-link title-small has-state active">Recipes</a>                
+                    <a href="./recipes.html" class="navbar-link title-small has-state active">Receitas</a>                
                 </li>
             </ul>
         </nav>
@@ -63,11 +63,11 @@
         </button>
 
         <a href="./saved-recipes.html" class="btn btn-primary has-icon">
-            <span class="material-symbols-outlined" aria-hidden="true">book</span>
+            <span class="material-symbols-outlined" aria-hidden="true">livro</span>
 
-            <span class="span">Saved Recipes</span>
+            <span class="span">Receitas Salvas</span>
         </a>
-        <p id="userName">Arthur Levy</p>
+        <p id="userName"></p>
         <button class="logout" id="logoutButton">Sair</button>
     </header>
 
@@ -80,7 +80,7 @@
                     <span class="item-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
                     </span>
-                    <span class="label-medium"> Recipes </span>
+                    <span class="label-medium"> Receitas </span>
                 </a>
             </li>
 
@@ -96,9 +96,9 @@
             <li class="nav-item">
                 <a href="./saved-recipes.html" class="nav-link">
                     <span class="item-icon">
-                        <span class="material-symbols-outlined" aria-hidden="true">book</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">livro</span>
                     </span>
-                    <span class="label-medium"> Saved </span>
+                    <span class="label-medium"> Salvos </span>
                 </a>
             </li>
         </ul>
@@ -111,20 +111,20 @@
                
                 <div class="banner-card">
                 
-                    <h1 class="display-large"> Your desired dish?</h1>
+                    <h1 class="display-large"> O que vamos cozinhar?</h1>
                
                 <div class="search-wrapper" data-search-form>
                     
                     <span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
                     
-                    <input type="search" name="search" aria-label="Search recipes" placeholder="Search recipes..." class="search-field body-medium" data-search-field></input>
+                    <input type="search" name="search" aria-label="Search recipes" placeholder="Pesquise Receitas!" class="search-field body-medium" data-search-field></input>
                      <button class="search-submit" aria-label="Submit" data-search-btn>
                         <span class="material-symbols-outlined" aria-hidden="true">search</span>
                      </button>
                
             </div>
                 <p class="label-medium">
-                    Search any recipe e.g: burguer, pizza, sandwich, toast.
+                    Que tal comer hambúrguer? Pizza? Sanduíche? Uma salada? Temos muitas opções para você!
                 </p>
             </section>
             
@@ -132,11 +132,11 @@
             <section class="section tab">
                 <div class="container">
                     <div class="tab-list" data-tab-list role="tablist" aria-label="Meal type">
-                        <button class="tab-btn title-small has-state" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true" data-tab-btn>Breakfast</button>
-                        <button class="tab-btn title-small has-state" role="tab" id="tab-2" tabindex="-1" aria-controls="panel-2" aria-selected="false" data-tab-btn>Lunch</button>
-                        <button class="tab-btn title-small has-state" role="tab" id="tab-3" tabindex="-1" aria-controls="panel-3" aria-selected="false" data-tab-btn>Dinner</button>
-                        <button class="tab-btn title-small has-state" role="tab" id="tab-4" tabindex="-1" aria-controls="panel-4" aria-selected="false" data-tab-btn>Snack</button>
-                        <button class="tab-btn title-small has-state" role="tab" id="tab-5" tabindex="-1" aria-controls="panel-5" aria-selected="false" data-tab-btn>Teatime</button>
+                        <button class="tab-btn title-small has-state" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true" data-tab-btn search="breakfast">Café da Manhã</button>
+                        <button class="tab-btn title-small has-state" role="tab" id="tab-2" tabindex="-1" aria-controls="panel-2" aria-selected="false" data-tab-btn search="lunch">Almoço</button>
+                        <button class="tab-btn title-small has-state" role="tab" id="tab-3" tabindex="-1" aria-controls="panel-3" aria-selected="false" data-tab-btn search="dinner">Jantar</button>
+                        <button class="tab-btn title-small has-state" role="tab" id="tab-4" tabindex="-1" aria-controls="panel-4" aria-selected="false" data-tab-btn search="snack">Lanches Rápidos</button>
+                        <button class="tab-btn title-small has-state" role="tab" id="tab-5" tabindex="-1" aria-controls="panel-5" aria-selected="false" data-tab-btn search="teatime">Café da Tarde</button>
                     </div>
                     <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0" data-tab-panel hidden>
                         <div class="grid-list">
@@ -157,7 +157,7 @@
             
                                     <div class="card-body">
                                         <h3 class="title-small">
-                                            <a href="./detail.html" class="card-link">Recipe name</a>
+                                            <a href="./detail.html" class="card-link">Nome da Receita</a>
                                         </h3>
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
@@ -173,13 +173,13 @@
                                 </div>
                             </div>
 
-                            <a href="./recipes.html" class="btn btn-secondary label-large has-state">Show More</a>
+                            <a href="./recipes.html" class="btn btn-secondary label-large has-state">Mostre Mais</a>
                         </div>
                     </div>
-                    <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" data-tab-panel hidden>Lunch</div>
-                    <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" data-tab-panel hidden>Dinner</div>
-                    <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" data-tab-panel hidden>Snack</div>
-                    <div class="tab-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" tabindex="0" data-tab-panel hidden>Teatime</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" data-tab-panel hidden>Almoço</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" data-tab-panel hidden>Jantar</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" data-tab-panel hidden>Lanches Rápidos</div>
+                    <div class="tab-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" tabindex="0" data-tab-panel hidden>Café da Tarde</div>
                 </div>
             </section>
             
@@ -189,7 +189,7 @@
                     
                 <div class="container">
                     
-                    <h2 class="section-title headline-small" id="slider-label-1"> Latest Asian Recipes</h2>
+                    <h2 class="section-title headline-small" id="slider-label-1">Últimas Receitas Asiáticas</h2>
 
                     <div class="slider">
 
@@ -210,7 +210,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -262,7 +262,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -288,7 +288,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -300,7 +300,7 @@
                             </li>
                             <li class="slider-item" data-slider-item>
                                 <a href="./recipes.html" class="load-more-card has-state">
-                                    <span class="label-large">Show more</span>
+                                    <span class="label-large">Mostre Mais</span>
                                     <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
                                 </a>
                             </li>
@@ -313,7 +313,7 @@
                 
                 <div class="container">
                     
-                    <h2 class="section-title headline-small" id="slider-label-1"> Latest French Recipes</h2>
+                    <h2 class="section-title headline-small" id="slider-label-1"> Últimas Receitas Francesas</h2>
 
                     <div class="slider">
 
@@ -334,7 +334,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -360,7 +360,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -386,7 +386,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -412,7 +412,7 @@
                                         <div class="meta-wrapper">
                                             <div class="meta-item">
                                                 <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                                <span class="label-medium">2 minutes</span>
+                                                <span class="label-medium">2 minutos</span>
                                             </div>
                                             <button class="icon-btn has-state removed" aria-label="Add to saved recipes">
                                                 <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
@@ -424,7 +424,7 @@
                             </li>
                             <li class="slider-item" data-slider-item>
                                 <a href="./recipes.html" class="load-more-card has-state">
-                                    <span class="label-large">Show more</span>
+                                    <span class="label-large">Mostre Mais</span>
                                     <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
                                 </a>
                             </li>
@@ -435,81 +435,81 @@
             
             <section class="section tag" aria-labelledby="tag-label">
                 <div class="container">
-                    <h2 class="section-title display-small" id="tag-label">Choose your health preference.</h2>
+                    <h2 class="section-title display-small" id="tag-label">Escolha suas preferências saudáveis.</h2>
                     <p class="body-medium section-text">
-                        Choosing your health preference is an important step towards achieving a healthier lifestyle.
+                        Escolher sua preferência de saúde é um passo importante para alcançar um estilo de vida mais saudável.
                     </p>
 
                     <div class="tag-list">
-                        <a href="./recipes.html?health=wheat-free" class="badge-btn body-medium has-state">Wheat-Free</a>
+                        <a href="./recipes.html?health=wheat-free" class="badge-btn body-medium has-state">Sem Trigo</a>
                         
-                        <a href="./recipes.html?health=vegetarian" class="badge-btn body-medium has-state">Vegetarian</a>
+                        <a href="./recipes.html?health=vegetarian" class="badge-btn body-medium has-state">Vegetariano</a>
                         
-                        <a href="./recipes.html?health=vegan" class="badge-btn body-medium has-state">Vegan</a>
+                        <a href="./recipes.html?health=vegan" class="badge-btn body-medium has-state">Vegano</a>
                         
-                        <a href="./recipes.html?health=tree-nut-free" class="badge-btn body-medium has-state">Tree-Nut-Free</a>
+                        <a href="./recipes.html?health=tree-nut-free" class="badge-btn body-medium has-state">Livre de Nozes</a>
                         
-                        <a href="./recipes.html?health=sulfite-free" class="badge-btn body-medium has-state">Sulfite-Free</a>
+                        <a href="./recipes.html?health=sulfite-free" class="badge-btn body-medium has-state">Sem Sulfato</a>
                         
-                        <a href="./recipes.html?health=sugar-conscious" class="badge-btn body-medium has-state">Sugar-Conscious</a>
+                        <a href="./recipes.html?health=sugar-conscious" class="badge-btn body-medium has-state">Baixo Açúcar</a>
                         
-                        <a href="./recipes.html?health=soy-free" class="badge-btn body-medium has-state">Soy-Free</a>
+                        <a href="./recipes.html?health=soy-free" class="badge-btn body-medium has-state">Sem Soja</a>
                         
-                        <a href="./recipes.html?health=red-meat-free" class="badge-btn body-medium has-state">Red-Meat-Free</a>
+                        <a href="./recipes.html?health=red-meat-free" class="badge-btn body-medium has-state">Sem Carne Vermelha</a>
                         
-                        <a href="./recipes.html?health=pork-free" class="badge-btn body-medium has-state">Pork-Free</a>
+                        <a href="./recipes.html?health=pork-free" class="badge-btn body-medium has-state">Sem Carne de Porco</a>
                         
-                        <a href="./recipes.html?health=pecatarian" class="badge-btn body-medium has-state">Pescatarian</a>
+                        <a href="./recipes.html?health=pecatarian" class="badge-btn body-medium has-state">Pescatariano</a>
                         
-                        <a href="./recipes.html?health=peanut-free" class="badge-btn body-medium has-state">Peanut-Free</a>
+                        <a href="./recipes.html?health=peanut-free" class="badge-btn body-medium has-state">Sem Amendoim</a>
 
-                        <a href="./recipes.html?health=paleo" class="badge-btn body-medium has-state">Paleo</a>
+                        <a href="./recipes.html?health=paleo" class="badge-btn body-medium has-state">Paleolítica</a>
 
-                        <a href="./recipes.html?health=No-oil-added" class="badge-btn body-medium has-state">No oil added</a>
+                        <a href="./recipes.html?health=No-oil-added" class="badge-btn body-medium has-state">Sem Adição de Óleo</a>
 
-                        <a href="./recipes.html?health=mustard-free" class="badge-btn body-medium has-state">Mustard-Free</a>
+                        <a href="./recipes.html?health=mustard-free" class="badge-btn body-medium has-state">Sem Mostarda</a>
 
-                        <a href="./recipes.html?health=mollusk-free" class="badge-btn body-medium has-state">Mollusk-Free</a>
+                        <a href="./recipes.html?health=mollusk-free" class="badge-btn body-medium has-state">Livre de Moluscos</a>
 
-                        <a href="./recipes.html?health=Mediterranean" class="badge-btn body-medium has-state">Mediterranean</a>
+                        <a href="./recipes.html?health=Mediterranean" class="badge-btn body-medium has-state">Mediterrâneo</a>
 
-                        <a href="./recipes.html?health=lupine-free" class="badge-btn body-medium has-state">Lupine-Free</a>
+                        <a href="./recipes.html?health=lupine-free" class="badge-btn body-medium has-state">Sem Tremoço</a>
 
-                        <a href="./recipes.html?health=low-sugar" class="badge-btn body-medium has-state">Low Sugar</a>
+                        <a href="./recipes.html?health=low-sugar" class="badge-btn body-medium has-state">Sem Açúcar</a>
 
-                        <a href="./recipes.html?health=low-potassium" class="badge-btn body-medium has-state">Low Potassium</a>
+                        <a href="./recipes.html?health=low-potassium" class="badge-btn body-medium has-state">Baixo Teor de Potássio</a>
 
                         <a href="./recipes.html?health=kosher" class="badge-btn body-medium has-state">Kosher</a>
 
-                        <a href="./recipes.html?health=kidney-friendly" class="badge-btn body-medium has-state">Kidney-Friendly</a>
+                        <a href="./recipes.html?health=kidney-friendly" class="badge-btn body-medium has-state">Doença Renal</a>
 
-                        <a href="./recipes.html?health=keto-friendly" class="badge-btn body-medium has-state">Keto-Friendly
+                        <a href="./recipes.html?health=keto-friendly" class="badge-btn body-medium has-state">Cetogênica
                         </a>
 
-                        <a href="./recipes.html?health=immuno-supportive" class="badge-btn body-medium has-state">Immuno-Supportive</a>
+                        <a href="./recipes.html?health=immuno-supportive" class="badge-btn body-medium has-state">Suporte Imunológico</a>
 
-                        <a href="./recipes.html?health=gluten-free" class="badge-btn body-medium has-state">Gluten-Free
+                        <a href="./recipes.html?health=gluten-free" class="badge-btn body-medium has-state">Sem glúten
                         </a>
 
-                        <a href="./recipes.html?health=fodmap-free" class="badge-btn body-medium has-state">FODMAP-Free
+                        <a href="./recipes.html?health=fodmap-free" class="badge-btn body-medium has-state">FODMAP
                         </a>
 
-                        <a href="./recipes.html?health=fish-free" class="badge-btn body-medium has-state">Fish-Free</a>
+                        <a href="./recipes.html?health=fish-free" class="badge-btn body-medium has-state">Sem Peixes</a>
 
-                        <a href="./recipes.html?health=egg-free" class="badge-btn body-medium has-state">Egg-Free
+                        <a href="./recipes.html?health=egg-free" class="badge-btn body-medium has-state">Sem Ovos
                         </a>
 
-                        <a href="./recipes.html?health=DASH" class="badge-btn body-medium has-state">DASH</a>
+                        <a href="./recipes.html?health=DASH" class="badge-btn body-medium has-state">DASH-Dieta Hipertensa</a>
 
-                        <a href="./recipes.html?health=dairy-free" class="badge-btn body-medium has-state">Dairy-Free
+                        <a href="./recipes.html?health=dairy-free" class="badge-btn body-medium has-state">Sem Laticínios
                         </a>
                         
-                        <a href="./recipes.html?health=crustacean-free" class="badge-btn body-medium has-state">Crustcean-Free
+                        <a href="./recipes.html?health=crustacean-free" class="badge-btn body-medium has-state">Sem Crustáceos
                         </a>
 
-                        <a href="./recipes.html?health=alcohol-free" class="badge-btn body-medium has-state">Alcohol-Free</a>
+                        <a href="./recipes.html?health=alcohol-free" class="badge-btn body-medium has-state">Não Alcoólico</a>
 
-                        <a href="./recipes.html?health=alcohol-cocktail" class="badge-btn body-medium has-state">Alcohol-Cocktail</a>
+                        <a href="./recipes.html?health=alcohol-cocktail" class="badge-btn body-medium has-state">Coquetel de Álcool</a>
 
                     </div>
                 </div>
@@ -533,7 +533,7 @@
 
         <div class="snackbar-container">
             <div class="snackbar">
-                <p class="body-medium">Added to Recipe book</p>
+                <p class="body-medium">Adicionado ao Livro de Receitas</p>
             </div>
         </div>
     </body>

@@ -1,18 +1,12 @@
 "use strict";
 
+import { fetchDataByIgredient } from "./api.js";
+import { $skeletonCard, cardQueries } from "./global.js";
+import { getTime } from "./module.js";
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const q = params.get('q');
 console.log(q)
-
-"use strict";
-
-import { fetchDataByIgredient } from "./api.js";
-import { $skeletonCard, cardQueries } from "./global.js";
-import { getTime } from "./module.js";
-
-/* Home page search */
-
 
 if (localStorage.getItem('token') === null) {
     window.location.href = '/login.html'
@@ -111,8 +105,8 @@ const addTabContent = ($currentTabBtn, $currentTabPanel) => {
     `;
     
     // Make the API request
-    fetchDataByIgredient(q, [['mealType', $currentTabBtn.textContent.trim().toLowerCase(),], ...cardQueries], function(data) {
-        console.log("API Response for", $currentTabBtn.textContent.trim().toLowerCase(), data);
+    fetchDataByIgredient(q, [['mealType', $currentTabBtn.getAttribute('search').trim().toLowerCase()], ...cardQueries], function(data) {
+        console.log("API Response for", $currentTabBtn.getAttribute('search').trim().toLowerCase(), data);
 
         // Check if data is valid before proceeding
         if (data && Array.isArray(data.hits)) {

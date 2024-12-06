@@ -32,9 +32,9 @@ export const fetchDataByIgredient = async function (param, queries, successCallb
     .replace(/,/g, "=")
     .replace(/ /g, "%20")
     .replace(/\+/g, "%2B");
+    console.log(param)
 
-    const url = `${ACCESS_POINT}?app_id=${APP_ID}&app_key=${API_KEY}&q=${param}&type=${TYPE}${query ? `&${query}` : ""}`;
-
+    const url = `${ACCESS_POINT}?app_id=${APP_ID}&q=${param}&app_key=${API_KEY}&type=public`;
 
     const response = await fetch(url);
 
