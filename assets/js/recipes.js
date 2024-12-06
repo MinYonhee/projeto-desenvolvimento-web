@@ -6,7 +6,6 @@ import { getTime } from "./module.js";
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const q = params.get('q');
-console.log(q)
 
 if (localStorage.getItem('token') === null) {
     window.location.href = '/login.html'
