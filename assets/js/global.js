@@ -35,7 +35,7 @@ export const $skeletonCard = `
 
 const ROOT = "https://api.edamam.com/api/recipes/v2";
 
-window.saveRecipe = function(element, recipeId) {
+window.saveRecipe = async function(element, recipeId) {
     const isSaved = window.localStorage.getItem(`cookio-recipe${recipeId}`);
     ACCESS_POINT = `${ROOT}/${recipeId}`;
 
@@ -45,6 +45,12 @@ window.saveRecipe = function(element, recipeId) {
             element.classList.toggle("saved");
             element.classList.toggle("removed");
             showNotification("Added to Recipe book");
+
+            let recipeData = {
+                name: data.recipe
+            }
+
+            console.log(data.recipe)
         });
 
         ACCESS_POINT = ROOT;
